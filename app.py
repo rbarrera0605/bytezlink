@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -18,7 +19,6 @@ def contact():
 def services():
     return render_template('services.html')
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    port = int(os.environ.get('PORT', 5000))  # get port from env variable or use 5000
+    app.run(host='0.0.0.0', port=port, debug=True)  # bind to all interfaces and the port
