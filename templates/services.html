@@ -12,9 +12,11 @@
       theme: {
         extend: {
           colors: {
-            primary: '#00f6ff',
-            dark: '#0f0f0f',
-            lightDark: '#1a1a1a',
+            primary: '#0d47a1',    // Deep Blue (primary)
+            dark: '#333333',       // Dark gray text background
+            lightDark: '#f9f9f9',  // Light background
+            accent: '#1565c0',     // Accent blue (hover etc.)
+            card: '#ffffff'        // White card background
           },
           fontFamily: {
             mono: ['"Fira Code"', 'monospace'],
@@ -23,53 +25,53 @@
       }
     }
   </script>
-  <!-- Optional: Google Fonts for Techy Feel -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-dark text-gray-200 font-sans">
+<body class="bg-lightDark text-dark font-sans">
 
   <!-- Header -->
-  <header class="bg-lightDark border-b border-gray-700">
+  <header class="bg-primary text-white shadow-md">
     <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold text-primary font-mono">BytezLink IT Solution</h1>
+      <h1 class="text-2xl font-bold font-mono">BytezLink IT Solution</h1>
       <nav class="space-x-6">
-        <a href="/" class="hover:text-primary transition">Home</a>
-        <a href="/services" class="hover:text-primary transition font-semibold underline">Services</a>
-        <a href="/about" class="hover:text-primary transition">About</a>
-        <a href="/contact" class="hover:text-primary transition">Contact</a>
+        <a href="/" class="hover:text-accent transition">Home</a>
+        <a href="/services" class="hover:text-accent transition font-semibold underline">Services</a>
+        <a href="/about" class="hover:text-accent transition">About</a>
+        <a href="/contact" class="hover:text-accent transition">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Main content -->
-  <main class="max-w-4xl mx-auto bg-lightDark rounded-lg shadow-lg mt-12 p-10">
+  <main class="max-w-4xl mx-auto bg-card rounded-lg shadow-lg mt-12 p-10">
     <h2 class="text-4xl font-bold text-primary font-mono mb-10 text-center">Our Services</h2>
 
     <section class="space-y-10">
-      <div class="service-item border-b border-gray-700 pb-6">
-        <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Technical Support</h3>
-        <p class="text-gray-300 text-lg">24/5 support to keep your systems running smoothly and minimize downtime.</p>
+      <div class="service-item border-b border-gray-300 pb-6">
+        <h3 class="text-2xl font-semibold text-primary mb-2">Technical Support</h3>
+        <p class="text-gray-700 text-lg">24/5 support to keep your systems running smoothly and minimize downtime.</p>
       </div>
 
-      <div class="service-item border-b border-gray-700 pb-6">
-        <h3 class="text-2xl font-semibold text-cyan-400 mb-2">CCTV Solutions</h3>
-        <p class="text-gray-300 text-lg">High‑quality CCTV systems for security and monitoring, installed and supported by professionals.</p>
+      <div class="service-item border-b border-gray-300 pb-6">
+        <h3 class="text-2xl font-semibold text-primary mb-2">CCTV Solutions</h3>
+        <p class="text-gray-700 text-lg">High‑quality CCTV systems for security and monitoring, installed and supported by professionals.</p>
       </div>
 
-      <div class="service-item border-b border-gray-700 pb-6">
-        <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Web & App Development</h3>
-        <p class="text-gray-300 text-lg">Custom websites and applications tailored to your business needs.</p>
+      <div class="service-item border-b border-gray-300 pb-6">
+        <h3 class="text-2xl font-semibold text-primary mb-2">Web & App Development</h3>
+        <p class="text-gray-700 text-lg">Custom websites and applications tailored to your business needs.</p>
       </div>
 
       <div class="service-item">
-        <h3 class="text-2xl font-semibold text-cyan-400 mb-2">General Tech Solutions</h3>
-        <p class="text-gray-300 text-lg">From cloud setup to network maintenance — get tech that works for you.</p>
+        <h3 class="text-2xl font-semibold text-primary mb-2">General Tech Solutions</h3>
+        <p class="text-gray-700 text-lg">From cloud setup to network maintenance — get tech that works for you.</p>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-lightDark border-t border-gray-700 py-6 mt-16 text-center text-gray-500 text-sm">
+  <footer class="bg-primary text-white py-6 mt-16 text-center text-sm">
     <p>&copy; 2025 BytezLink IT Solution. All rights reserved.</p>
     <p>Contact: +63‑XXXXXXXXXXX | [Your Email Here]</p>
   </footer>

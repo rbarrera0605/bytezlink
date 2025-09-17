@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BytezLink IT Solution</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-  <!-- ✅ Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#00f6ff', // neon cyan accent
-            dark: '#0f0f0f',
-            lightDark: '#1a1a1a'
+            primary: '#0d47a1',     // Deep Blue (header/footer)
+            background: '#f9f9f9',  // Light neutral background
+            card: '#ffffff',        // White cards
+            textMain: '#333333',    // Dark gray text
+            accent: '#1565c0'       // Lighter blue accent (hover)
           },
           fontFamily: {
             mono: ['"Fira Code"', 'monospace'],
@@ -24,79 +27,79 @@
     }
   </script>
 
-  <!-- ✅ Google Fonts (Optional Techy Look) -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
 
 </head>
-<body class="bg-dark text-gray-200 font-sans">
+<body class="bg-background text-textMain font-sans">
 
   <!-- Header -->
-  <header class="bg-lightDark border-b border-gray-700">
+  <header class="bg-primary text-white shadow-md">
     <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold text-primary font-mono">BytezLink IT Solution</h1>
+      <h1 class="text-2xl font-bold font-mono">BytezLink IT Solution</h1>
       <nav class="space-x-6">
-        <a href="/" class="hover:text-primary transition">Home</a>
-        <a href="/services" class="hover:text-primary transition">Services</a>
-        <a href="/about" class="hover:text-primary transition">About</a>
-        <a href="/contact" class="hover:text-primary transition">Contact</a>
+        <a href="/" class="hover:text-accent transition">Home</a>
+        <a href="/services" class="hover:text-accent transition">Services</a>
+        <a href="/about" class="hover:text-accent transition">About</a>
+        <a href="/contact" class="hover:text-accent transition">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-dark py-20">
+  <section class="bg-gradient-to-r from-primary to-[#1565c0] text-white py-20">
     <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary font-mono">Your Trusted Tech Partner</h2>
-      <p class="text-lg text-gray-300 mb-8">Providing reliable technical support, CCTV setup, web & app development, and general tech solutions for businesses.</p>
-      <a href="/contact" class="inline-block bg-primary text-black px-6 py-3 rounded hover:bg-cyan-300 transition font-semibold">Contact Us Today</a>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 font-mono">Your Trusted Tech Partner</h2>
+      <p class="text-lg mb-8">Providing reliable technical support, CCTV setup, web & app development, and general tech solutions for businesses.</p>
+      <a href="/contact" class="inline-block bg-white text-primary px-6 py-3 rounded hover:bg-gray-100 transition font-semibold">Contact Us Today</a>
     </div>
   </section>
 
   <!-- Services -->
-  <section class="bg-lightDark py-16">
+  <section class="bg-background py-16">
     <div class="max-w-6xl mx-auto px-6">
       <h3 class="text-3xl font-bold mb-10 text-center text-primary font-mono">Our Services</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-dark p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h4 class="text-xl font-semibold mb-2 text-cyan-400">Technical Support</h4>
-          <p class="text-gray-400">24/5 support to keep your systems running smoothly and minimize downtime.</p>
+        <div class="bg-card p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2 text-primary">Technical Support</h4>
+          <p class="text-gray-700">24/5 support to keep your systems running smoothly and minimize downtime.</p>
         </div>
-        <div class="bg-dark p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h4 class="text-xl font-semibold mb-2 text-cyan-400">CCTV Solutions</h4>
-          <p class="text-gray-400">High‑quality CCTV systems installed and supported by professionals.</p>
+        <div class="bg-card p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2 text-primary">CCTV Solutions</h4>
+          <p class="text-gray-700">High‑quality CCTV systems installed and supported by professionals.</p>
         </div>
-        <div class="bg-dark p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h4 class="text-xl font-semibold mb-2 text-cyan-400">Web & App Development</h4>
-          <p class="text-gray-400">Custom websites and applications tailored to your business needs.</p>
+        <div class="bg-card p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2 text-primary">Web & App Development</h4>
+          <p class="text-gray-700">Custom websites and applications tailored to your business needs.</p>
         </div>
-        <div class="bg-dark p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h4 class="text-xl font-semibold mb-2 text-cyan-400">General Tech Solutions</h4>
-          <p class="text-gray-400">From cloud setup to network maintenance — tech that works for you.</p>
+        <div class="bg-card p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2 text-primary">General Tech Solutions</h4>
+          <p class="text-gray-700">From cloud setup to network maintenance — tech that works for you.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="bg-dark py-16">
+  <section class="bg-[#e3f2fd] py-16"> <!-- Light blue background -->
     <div class="max-w-4xl mx-auto text-center px-6">
       <h3 class="text-3xl font-bold mb-10 text-primary font-mono">What Our Clients Say</h3>
       <div class="space-y-8">
-        <div class="bg-lightDark p-6 rounded-lg shadow text-gray-300">
+        <div class="bg-card p-6 rounded-lg shadow text-gray-800">
           <p class="italic mb-4">“BytezLink helped us move our services online quickly & efficiently. Highly recommended!”</p>
-          <h4 class="text-sm font-semibold text-primary">– Client A</h4>
+          <h4 class="text-sm font-semibold text-accent">– Client A</h4>
         </div>
-        <div class="bg-lightDark p-6 rounded-lg shadow text-gray-300">
+        <div class="bg-card p-6 rounded-lg shadow text-gray-800">
           <p class="italic mb-4">“Great service and support. Always available when we needed.”</p>
-          <h4 class="text-sm font-semibold text-primary">– Client B</h4>
+          <h4 class="text-sm font-semibold text-accent">– Client B</h4>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-lightDark border-t border-gray-700 py-6">
-    <div class="max-w-6xl mx-auto text-center text-gray-500 text-sm">
+  <footer class="bg-primary text-white py-6">
+    <div class="max-w-6xl mx-auto text-center text-sm">
       <p>&copy; 2025 BytezLink IT Solution. All rights reserved.</p>
       <p>Contact: +63‑XXXXXXXXXXX | [Your Email Here]</p>
     </div>
