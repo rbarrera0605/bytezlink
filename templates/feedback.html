@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback - BytezLink IT Solution</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#f44336',     // Your primary red
+            background: '#fef2f2',  // Light background
+            card: '#ffffff',        // Cards white
+            textMain: '#1a1a1a',    // Text dark gray
+            accent: '#b71c1c'       // Accent red
+          },
+          fontFamily: {
+            mono: ['"Fira Code"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-background text-textMain font-sans min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-primary text-white shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold font-mono">BytezLink IT Solution</h1>
+      <nav class="space-x-6">
+        <a href="/" class="hover:text-accent transition">Home</a>
+        <a href="/services" class="hover:text-accent transition">Services</a>
+        <a href="/about" class="hover:text-accent transition">About</a>
+        <a href="/contact" class="hover:text-accent transition">Contact</a>
+        <a href="/feedback" class="hover:text-accent transition font-semibold underline">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Feedback Form Section -->
+  <main class="max-w-5xl mx-auto flex-grow px-6 py-12">
+    <h2 class="text-4xl font-bold mb-10 text-primary font-mono text-center">Leave Your Feedback</h2>
+    
+    <form action="/submit-feedback" method="POST" class="max-w-xl mx-auto bg-card p-8 rounded-lg shadow-lg space-y-6">
+      <div>
+        <label for="name" class="block mb-2 font-semibold text-textMain">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+      </div>
+      
+      <div>
+        <label for="feedback" class="block mb-2 font-semibold text-textMain">Feedback</label>
+        <textarea
+          id="feedback"
+          name="feedback"
+          rows="5"
+          placeholder="Your feedback"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded resize-y focus:outline-none focus:ring-2 focus:ring-primary"
+        ></textarea>
+      </div>
+      
+      <button
+        type="submit"
+        class="bg-primary text-white font-semibold px-6 py-3 rounded hover:bg-accent transition"
+      >
+        Submit Feedback
+      </button>
+    </form>
+
+    <!-- Display Feedback -->
+    <section class="mt-16 max-w-xl mx-auto">
+      <h3 class="text-3xl font-bold mb-8 text-primary font-mono text-center">Visitor Feedback</h3>
+      <div id="feedback-list" class="space-y-6">
+        {% if feedbacks %}
+          {% for name, message, created_at in feedbacks %}
+          <div class="bg-card p-6 rounded-lg shadow border border-gray-200">
+            <p class="font-semibold text-primary">{{ name }} <span class="text-sm text-gray-500">({{ created_at }})</span></p>
+            <p class="mt-2 text-textMain whitespace-pre-line">{{ message }}</p>
+          </div>
+          {% endfor %}
+        {% else %}
+          <p class="text-center text-gray-600">No feedback yet. Be the first to leave your thoughts!</p>
+        {% endif %}
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 text-center text-sm">
+    <p>&copy; 2025 BytezLink IT Solution. All rights reserved.</p>
+    <p>Contact: +63‑XXXXXXXXXXX | [Your Email Here]</p>
+  </footer>
+
+</body>
+</html>
